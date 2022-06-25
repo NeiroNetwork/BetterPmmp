@@ -9,3 +9,6 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 ### DisableComboGlitch
 俗に言う切り替え攻撃を無効化します。  
 参考: https://github.com/NeiroNetwork/AttackDelayController
+
+### VanillaLikePlayerList
+メニューに表示されるプレイヤーリストをバニラのよう(プレイヤーの名前のみ)にします。
