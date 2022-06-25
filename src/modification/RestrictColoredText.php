@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NeiroNetwork\BetterPocketMine\modification;
+namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\block\utils\SignText;
 use pocketmine\event\block\SignChangeEvent;

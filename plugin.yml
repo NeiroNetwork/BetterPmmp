@@ -1,5 +1,5 @@
-name: BetterPocketMine
+name: BetterPmmp
 version: 0.0.1
-main: NeiroNetwork\BetterPocketMine\Main
+main: NeiroNetwork\BetterPmmp\Main
 api: 4.0.0
-src-namespace-prefix: NeiroNetwork\BetterPocketMine
+src-namespace-prefix: NeiroNetwork\BetterPmmp

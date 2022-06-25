@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NeiroNetwork\BetterPocketMine\modification;
+namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;

@@ -1,4 +1,4 @@
-# BetterPocketMine
+# BetterPmmp
 
 ## 変更一覧
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NeiroNetwork\BetterPocketMine\modification;
+namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketSendEvent;
