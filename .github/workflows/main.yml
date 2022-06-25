@@ -1,0 +1,23 @@
+name: build
+
+on:
+  push:
+    tags: '*.*.*'
+
+env:
+  OUTPUT_FILE: ${{ github.event.repository.name }}_v${{ github.ref_name }}.phar
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build plugin
+      run: curl -sL https://raw.githubusercontent.com/pmmp/DevTools/master/src/ConsoleScript.php | php -dphar.readonly=0 -- --make ./ --out $OUTPUT_FILE
+
+    - uses: softprops/action-gh-release@v0.1.14
+      with:
+        files: ${{ env.OUTPUT_FILE }}
