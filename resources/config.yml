@@ -1,6 +1,6 @@
 ---
 RestrictColoredText: true
 DisableComboGlitch: true
-VanillaLikePlayerList: true
+SimplePlayerList: true
 VanillaLikeChat: true
 ...
