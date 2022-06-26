@@ -13,9 +13,16 @@ use pocketmine\plugin\PluginBase;
 class Main extends PluginBase{
 
 	protected function onEnable() : void{
-		$this->getServer()->getPluginManager()->registerEvents(new RestrictColoredText, $this);
-		$this->getServer()->getPluginManager()->registerEvents(new DisableComboGlitch, $this);
-		$this->getServer()->getPluginManager()->registerEvents(new VanillaLikePlayerList, $this);
-		$this->getServer()->getPluginManager()->registerEvents(new VanillaLikeChat, $this);
+		$mods = [];
+		$config = $this->getConfig();
+
+		if($config->get("RestrictColoredText")) $mods[] = new RestrictColoredText;
+		if($config->get("DisableComboGlitch")) $mods[] = new DisableComboGlitch;
+		if($config->get("VanillaLikePlayerList")) $mods[] = new VanillaLikePlayerList;
+		if($config->get("VanillaLikeChat")) $mods[] = new VanillaLikeChat;
+
+		foreach($mods as $listener){
+			$this->getServer()->getPluginManager()->registerEvents($listener, $this);
+		}
 	}
 }
