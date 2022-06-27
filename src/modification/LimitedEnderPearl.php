@@ -19,7 +19,9 @@ class LimitedEnderPearl implements Listener{
 
 		foreach(($world ?? $player->getWorld())->getEntities() as $entity){
 			if($entity->getOwningEntityId() === $player->getId() && $entity instanceof EnderPearl){
-				$entity->kill();
+				$entity->setOwningEntity(null);
+				// どっちがいい？
+				// $entity->kill();
 			}
 		}
 	}
