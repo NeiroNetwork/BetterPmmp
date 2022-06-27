@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace NeiroNetwork\BetterPmmp;
 
 use NeiroNetwork\BetterPmmp\modification\DisableComboGlitch;
+use NeiroNetwork\BetterPmmp\modification\LimitedEnderPearl;
 use NeiroNetwork\BetterPmmp\modification\RestrictColoredText;
 use NeiroNetwork\BetterPmmp\modification\VanillaLikeChat;
 use NeiroNetwork\BetterPmmp\modification\SimplePlayerList;
@@ -20,6 +21,7 @@ class Main extends PluginBase{
 		if($config->get("DisableComboGlitch")) $mods[] = new DisableComboGlitch;
 		if($config->get("SimplePlayerList")) $mods[] = new SimplePlayerList;
 		if($config->get("VanillaLikeChat")) $mods[] = new VanillaLikeChat;
+		if($config->get("LimitedEnderPearl")) $mods[] = new LimitedEnderPearl;
 
 		foreach($mods as $listener){
 			$this->getServer()->getPluginManager()->registerEvents($listener, $this);

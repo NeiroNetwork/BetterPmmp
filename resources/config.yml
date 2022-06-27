@@ -3,4 +3,5 @@ RestrictColoredText: true
 DisableComboGlitch: true
 SimplePlayerList: true
 VanillaLikeChat: true
+LimitedEnderPearl: true
 ...
