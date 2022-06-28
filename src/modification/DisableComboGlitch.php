@@ -14,8 +14,12 @@ class DisableComboGlitch implements Listener{
 	 * @priority LOWEST
 	 */
 	public function onDamage(EntityDamageByEntityEvent $event) : void{
-		if($event->isApplicable(EntityDamageEvent::MODIFIER_PREVIOUS_DAMAGE_COOLDOWN)){
-			$event->cancel();
-		}
+		if($event->getCause() !== EntityDamageEvent::CAUSE_ENTITY_ATTACK) return;
+		if(!$event->isApplicable(EntityDamageEvent::MODIFIER_PREVIOUS_DAMAGE_COOLDOWN)) return;
+		if(is_null($event->getDamager())) return;
+		$last = $event->getEntity()->getLastDamageCause();
+		if(!$last instanceof EntityDamageByEntityEvent) return;
+		if($last->getDamager() !== $event->getDamager()) return;
+		$event->cancel();
 	}
 }
