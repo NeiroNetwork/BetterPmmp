@@ -17,7 +17,8 @@ class SimplePlayerList implements Listener{
 				/** @var PlayerListPacket $packet */
 				if($packet->type !== PlayerListPacket::TYPE_ADD) continue;
 				foreach($packet->entries as $entry){
-					$entry->username = Server::getInstance()->getPlayerByUUID($entry->uuid)->getName();
+					$player = Server::getInstance()->getPlayerByUUID($entry->uuid);
+					if(!is_null($player)) $entry->username = $player->getName();
 				}
 			}
 		}
