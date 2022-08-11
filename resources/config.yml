@@ -4,4 +4,5 @@ DisableComboGlitch: true
 SimplePlayerList: true
 VanillaLikeChat: true
 LimitedEnderPearl: true
+FixFallDamageHeight: true
 ...

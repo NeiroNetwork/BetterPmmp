@@ -21,3 +21,7 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 
 ### LimitedEnderPearl
 プレイヤーが死亡した時・他のワールドへテレポートした時に、そのプレイヤーが投げたエンダーパールを無効化します。
+
+### FixFallDamageHeight
+2ブロックの高さからジャンプするとダメージが受ける問題を一時的に修正します。
+参照: https://github.com/pmmp/PocketMine-MP/issues/4686
