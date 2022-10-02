@@ -5,5 +5,5 @@ SimplePlayerList: true
 VanillaLikeChat: true
 LimitedEnderPearl: true
 FixFallDamageHeight: true
-ChangeGameModePacketId: true
+DisableBreakSpectator: true
 ...

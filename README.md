@@ -27,5 +27,5 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 (イベントをキャンセルするだけなので、落下ダメージの音などは消えません)  
 参照: https://github.com/pmmp/PocketMine-MP/issues/4686
 
-### ChangeGameModePacketId
+### DisableBreakSpectator
 ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。
