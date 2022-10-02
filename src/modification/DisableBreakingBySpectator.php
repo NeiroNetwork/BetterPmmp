@@ -10,7 +10,7 @@ use pocketmine\network\mcpe\protocol\SetPlayerGameTypePacket;
 use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 
-class DisableBreakSpectator implements Listener{
+class DisableBreakingBySpectator implements Listener{
 
 	/**
 	 * @priority LOWEST
