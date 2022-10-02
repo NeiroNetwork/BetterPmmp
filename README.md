@@ -26,3 +26,7 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 2ブロックの高さからジャンプするとダメージが受ける問題を一時的に修正します。  
 (イベントをキャンセルするだけなので、落下ダメージの音などは消えません)  
 参照: https://github.com/pmmp/PocketMine-MP/issues/4686
+
+### DisableBreakSpectator
+ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。
+参照: https://github.com/pmmp/PocketMine-MP/pull/5313
