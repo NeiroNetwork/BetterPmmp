@@ -28,6 +28,7 @@ class Main extends PluginBase{
 			if(!class_exists($class)){
 				$this->getLogger()->error("Module \"$key\" not found");
 				$config->remove($key);
+				$config->save();
 				continue;
 			}
 
