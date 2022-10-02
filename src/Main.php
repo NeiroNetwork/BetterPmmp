@@ -22,15 +22,16 @@ class Main extends PluginBase{
 		]);
 
 		foreach($config->getAll() as $key => $value){
-			if($value){
-				$class = "\\NeiroNetwork\\BetterPmmp\\modification\\$key";
-				if(!class_exists($class)){
-					$this->getLogger()->error("Module \"$key\" not found");
-					$config->remove($key);
-					continue;
-				}
-				$this->getServer()->getPluginManager()->registerEvents(new $class, $this);
+			if(!$value) continue;
+
+			$class = "\\NeiroNetwork\\BetterPmmp\\modification\\$key";
+			if(!class_exists($class)){
+				$this->getLogger()->error("Module \"$key\" not found");
+				$config->remove($key);
+				continue;
 			}
+
+			$this->getServer()->getPluginManager()->registerEvents(new $class, $this);
 		}
 	}
 }
