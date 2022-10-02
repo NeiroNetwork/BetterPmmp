@@ -7,25 +7,17 @@ namespace NeiroNetwork\BetterPmmp\modification;
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\SetPlayerGameTypePacket;
-use pocketmine\player\GameMode;
-use pocketmine\player\Player;
+use pocketmine\network\mcpe\protocol\types\GameMode;
 
 class DisableBreakingBySpectator implements Listener{
 
-	/**
-	 * @priority LOWEST
-	 */
 	public function onPacketSend(DataPacketSendEvent $event){
-		$pks = $event->getPackets();
-		$sessions = $event->getTargets();
-
-		foreach($pks as $pk){
-			if(!$pk instanceof SetPlayerGameTypePacket) continue;
-			foreach($sessions as $session){
-				$player = $session->getPlayer();
-				if(!$player instanceof Player) continue;
-				if($player->getGamemode() === GameMode::SPECTATOR()){
-					$pk->gamemode = GameMode::SPECTATOR()->id();
+		foreach($event->getPackets() as $packet){
+			if($packet::NETWORK_ID !== SetPlayerGameTypePacket::NETWORK_ID) continue;
+			/** @var SetPlayerGameTypePacket $packet */
+			foreach($event->getTargets() as $session){
+				if($session->getPlayer()?->isSpectator()){
+					$packet->gamemode = GameMode::CREATIVE_VIEWER;
 				}
 			}
 		}
