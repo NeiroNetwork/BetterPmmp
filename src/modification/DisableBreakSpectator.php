@@ -23,7 +23,7 @@ class DisableBreakSpectator implements Listener{
 			if(!$pk instanceof SetPlayerGameTypePacket) continue;
 			foreach($sessions as $session){
 				$player = $session->getPlayer();
-				if(is_null($player) || !$player instanceof Player) continue;
+				if(!$player instanceof Player) continue;
 				if($player->getGamemode() === GameMode::SPECTATOR()){
 					$pk->gamemode = GameMode::SPECTATOR()->id();
 				}
