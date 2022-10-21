@@ -32,4 +32,6 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 参照: https://github.com/pmmp/PocketMine-MP/pull/5313
 
 ### ArrowHitSound
-プレイヤーが別のプレイヤーに弓矢を当てた際に、攻撃者に効果音を再生します。
+
+プレイヤーがエンティティに弓矢を当てた際に、攻撃者に効果音を再生します。  
+本来はプレイヤーに当てた場合のみに再生されるのが正しいバニラの挙動です: <https://minecraft.fandom.com/wiki/Bow#Sounds>
