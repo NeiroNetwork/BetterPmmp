@@ -19,6 +19,7 @@ class Main extends PluginBase{
 			"LimitedEnderPearl" => true,
 			"FixFallDamageHeight" => true,
 			"DisableBreakingBySpectator" => true,
+			"ArrowHitSound" => true,
 		]);
 
 		foreach($config->getAll() as $key => $value){
