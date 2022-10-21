@@ -36,7 +36,7 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 
 ### DisableBreakSpectator
 
-ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。
+ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。  
 参照: <https://github.com/pmmp/PocketMine-MP/pull/5313>
 
 ### ArrowHitSound
