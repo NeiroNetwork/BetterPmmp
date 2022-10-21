@@ -16,10 +16,13 @@ class VanillaLikeChat implements Listener{
 	 * @priority MONITOR
 	 */
 	public function onPlayerChat(PlayerChatEvent $event) : void{
+		$sender = $event->getPlayer();
+
 		$packet = new TextPacket;
 		$packet->type = TextPacket::TYPE_CHAT;
-		$packet->sourceName = $event->getPlayer()->getDisplayName();
+		$packet->sourceName = $sender->getDisplayName();
 		$packet->message = $event->getMessage();
+		$packet->xboxUserId = $sender->getXuid();
 
 		$notPlayers = [];
 
