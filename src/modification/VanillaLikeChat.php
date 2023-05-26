@@ -13,6 +13,7 @@ class VanillaLikeChat implements Listener{
 
 	/**
 	 * FIXME?: 優先度MONITORでイベントを変更してはいけないという原則を破ってる
+	 *
 	 * @priority MONITOR
 	 */
 	public function onPlayerChat(PlayerChatEvent $event) : void{

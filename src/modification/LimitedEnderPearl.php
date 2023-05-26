@@ -13,6 +13,13 @@ use pocketmine\world\World;
 
 class LimitedEnderPearl implements Listener{
 
+	/**
+	 * @priority MONITOR
+	 */
+	public function onPlayerDeath(PlayerDeathEvent $event) : void{
+		$this->killEnderPearl($event->getPlayer());
+	}
+
 	private function killEnderPearl(Player $player, World $world = null) : void{
 		// クリエイティブのプレイヤーが投げたエンダーパールはキルしない
 		if(!$player->hasFiniteResources()) return;
@@ -24,13 +31,6 @@ class LimitedEnderPearl implements Listener{
 				// $entity->kill();
 			}
 		}
-	}
-
-	/**
-	 * @priority MONITOR
-	 */
-	public function onPlayerDeath(PlayerDeathEvent $event) : void{
-		$this->killEnderPearl($event->getPlayer());
 	}
 
 	/**

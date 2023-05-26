@@ -6,7 +6,7 @@ namespace NeiroNetwork\BetterPmmp;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
-use Webmozart\PathUtil\Path;
+use Symfony\Component\Filesystem\Path;
 
 class Main extends PluginBase{
 
