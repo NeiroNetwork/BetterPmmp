@@ -1,5 +1,5 @@
 name: BetterPmmp
 version: 1.0.5
 main: NeiroNetwork\BetterPmmp\Main
-api: 4.0.0
+api: 5.0.0
 src-namespace-prefix: NeiroNetwork\BetterPmmp
