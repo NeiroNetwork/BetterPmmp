@@ -24,7 +24,7 @@ class DisableBreakingBySpectator implements Listener{
 			$layers[] = new AbilitiesLayer(AbilitiesLayer::LAYER_SPECTATOR, [
 				AbilitiesLayer::ABILITY_OPERATOR => false,
 			], null, null);
-			$property->setValue($packet, $layers);
+			$property->setValue($packet->getData(), $layers);
 		}
 	}
 }
