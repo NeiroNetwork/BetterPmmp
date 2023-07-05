@@ -20,7 +20,7 @@ class DisableBreakingBySpectator implements Listener{
 			if($packet::NETWORK_ID !== UpdateAbilitiesPacket::NETWORK_ID) continue;
 			/** @var UpdateAbilitiesPacket $packet */
 			$property = (new ReflectionClass($packet->getData()))->getProperty("abilityLayers");
-			$layers = $property->getValue($packet);
+			$layers = $property->getValue($packet->getData());
 			$layers[] = new AbilitiesLayer(AbilitiesLayer::LAYER_SPECTATOR, [
 				AbilitiesLayer::ABILITY_OPERATOR => false,
 			], null, null);
