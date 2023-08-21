@@ -7,7 +7,6 @@ namespace NeiroNetwork\BetterPmmp\modification;
 use pocketmine\entity\projectile\Arrow;
 use pocketmine\event\entity\EntityDamageByChildEntityEvent;
 use pocketmine\event\Listener;
-use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 use pocketmine\player\Player;
 
@@ -20,12 +19,14 @@ class ArrowHitSound implements Listener{
 		if($event->getChild() instanceof Arrow){
 			$damager = $event->getDamager();
 			if($damager instanceof Player){
-				$damager->getNetworkSession()->sendDataPacket($this->sound($damager->getPosition()));
+				$this->playHitSound($damager);
 			}
 		}
 	}
 
-	private function sound(Vector3 $pos) : PlaySoundPacket{
-		return PlaySoundPacket::create("random.orb", $pos->x, $pos->y, $pos->z, 1.0, 1.0);
+	private function playHitSound(Player $player) : void{
+		$position = $player->getPosition();
+		$packet = PlaySoundPacket::create("random.orb", $position->x, $position->y, $position->z, 1.0, 1.0);
+		$player->getNetworkSession()->sendDataPacket($packet);
 	}
 }
