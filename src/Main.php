@@ -20,6 +20,7 @@ class Main extends PluginBase{
 			"FixFallDamageHeight" => true,
 			"DisableBreakingBySpectator" => true,
 			"ArrowHitSound" => true,
+			"FixGhostWater" => true,
 		]);
 
 		foreach($config->getAll() as $key => $value){

@@ -43,3 +43,8 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 
 プレイヤーがエンティティに弓矢を当てた際に、攻撃者に効果音を再生します。  
 本来はプレイヤーに当てた場合のみに再生されるのが正しいバニラの挙動です: <https://minecraft.fandom.com/wiki/Bow#Sounds>
+
+### FixGhostWater
+
+はしごなどの水没するブロックに
+PocketMine-MP には [水没(Waterlogging)](https://minecraft.fandom.com/ja/wiki/%E6%B0%B4%E6%B2%A1) が実装されておらず、水没可能なブロックに水を設置しようとすると
