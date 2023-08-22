@@ -1,0 +1,48 @@
+name: Create Release Build
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  OUTPUT_FILE: ${{ github.event.repository.name }}_v${{ github.ref_name }}.phar
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Change plugin structure from PSR-4 to PSR-0
+        shell: php {0}
+        run: |
+          <?php
+          $description = yaml_parse_file("plugin.yml");
+          $path = str_replace("\\", "/", $description["src-namespace-prefix"] ?? exit);
+          system("mkdir -p _/$path; mv src/* _/$path; rmdir src; mv _ src");
+          unset($description["src-namespace-prefix"]);
+          yaml_emit_file($description, "plugin.yml");
+
+      - name: Build plugin
+        run: curl -sL https://raw.githubusercontent.com/pmmp/DevTools/1.17.1/src/ConsoleScript.php | php -dphar.readonly=0 -- --make ./ --out $OUTPUT_FILE
+
+      - name: Infect virions
+        shell: php {0}
+        run: |
+          <?php
+          foreach(@yaml_parse_file(".poggit.yml")["projects"] ?? [] as $project){
+            foreach($project["libs"] ?? [] as $lib){
+              $url = "https://poggit.pmmp.io/v.dl/{$lib["src"]}/" . ($lib["version"] ?? "*");
+              @$lib["branch"] && $url .= "?branch={$lib["branch"]}";
+              file_put_contents("virion.phar", file_get_contents($url));
+              system("php -dphar.readonly=0 virion.phar ${{ env.OUTPUT_FILE }}");
+            }
+          }
+
+      - uses: softprops/action-gh-release@v0.1.15
+        with:
+          name: ${{ github.event.repository.name }} ${{ github.ref_name }}
+          generate_release_notes: true
+          files: ${{ env.OUTPUT_FILE }}
