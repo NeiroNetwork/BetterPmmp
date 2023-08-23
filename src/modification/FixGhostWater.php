@@ -12,8 +12,13 @@ use pocketmine\network\mcpe\convert\TypeConverter;
 use pocketmine\network\mcpe\protocol\types\BlockPosition;
 use pocketmine\network\mcpe\protocol\UpdateBlockPacket;
 use pocketmine\player\Player;
+use pocketmine\Server;
 
-class FixGhostWater implements Listener{
+class FixGhostWater implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return is_null(Server::getInstance()->getPluginManager()->getPlugin("WaterLogging"));
+	}
 
 	/**
 	 * @priority MONITOR

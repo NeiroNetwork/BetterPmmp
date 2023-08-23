@@ -13,7 +13,11 @@ use ReflectionClass;
 /**
  * @see https://github.com/pmmp/PocketMine-MP/pull/5313
  */
-class DisableBreakingBySpectator implements Listener{
+class DisableBreakingBySpectator implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return true;
+	}
 
 	public function onPacketSend(DataPacketSendEvent $event) : void{
 		foreach($event->getPackets() as $packet){

@@ -11,7 +11,11 @@ use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class LimitedEnderPearl implements Listener{
+class LimitedEnderPearl implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return true;
+	}
 
 	/**
 	 * @priority MONITOR

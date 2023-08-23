@@ -11,7 +11,11 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\permission\DefaultPermissions;
 use pocketmine\utils\TextFormat;
 
-class RestrictColoredText implements Listener{
+class RestrictColoredText implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return true;
+	}
 
 	/**
 	 * @priority LOWEST

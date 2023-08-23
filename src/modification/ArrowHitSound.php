@@ -10,7 +10,11 @@ use pocketmine\event\Listener;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 use pocketmine\player\Player;
 
-class ArrowHitSound implements Listener{
+class ArrowHitSound implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return true;
+	}
 
 	/**
 	 * @priority MONITOR

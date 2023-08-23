@@ -8,7 +8,11 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
 
-class DisableComboGlitch implements Listener{
+class DisableComboGlitch implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return true;
+	}
 
 	/**
 	 * @priority LOWEST

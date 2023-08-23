@@ -9,7 +9,11 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\network\mcpe\protocol\TextPacket;
 use pocketmine\player\Player;
 
-class VanillaLikeChat implements Listener{
+class VanillaLikeChat implements Listener, Module{
+
+	public function isLoadable() : bool{
+		return true;
+	}
 
 	/**
 	 * FIXME?: 優先度MONITORでイベントを変更してはいけないという原則を破ってる
