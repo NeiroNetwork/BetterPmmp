@@ -23,18 +23,20 @@ class Main extends PluginBase{
 			"FixGhostWater" => true,
 		]);
 
-		foreach($config->getAll() as $key => $value){
-			if(!$value) continue;
+		foreach($config->getAll() as $module => $enable){
+			if(!$enable) continue;
 
-			$class = "\\NeiroNetwork\\BetterPmmp\\modification\\$key";
-			if(!class_exists($class)){
-				$this->getLogger()->error("Module \"$key\" not found");
-				$config->remove($key);
-				$config->save();
-				continue;
+			$class = "NeiroNetwork\\BetterPmmp\\modification\\$module";
+			if(class_exists($class)){
+				$this->getServer()->getPluginManager()->registerEvents(new $class, $this);
+			}else{
+				$this->getLogger()->error("Module \"$module\" not found");
+				$config->remove($module);
 			}
+		}
 
-			$this->getServer()->getPluginManager()->registerEvents(new $class, $this);
+		if($config->hasChanged()){
+			$config->save();
 		}
 	}
 }
