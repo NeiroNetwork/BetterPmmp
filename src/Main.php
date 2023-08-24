@@ -16,7 +16,6 @@ class Main extends PluginBase{
 			"RestrictColoredText" => true,
 			"DisableComboGlitch" => true,
 			"SimplePlayerList" => true,
-			"VanillaLikeChat" => true,
 			"LimitedEnderPearl" => true,
 			"FixFallDamageHeight" => true,
 			"DisableBreakingBySpectator" => true,
