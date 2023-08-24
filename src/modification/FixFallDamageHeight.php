@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\Listener;
 
-class FixFallDamageHeight implements Listener, Module{
+class FixFallDamageHeight implements Module{
 
 	public function isLoadable() : bool{
 		return true;

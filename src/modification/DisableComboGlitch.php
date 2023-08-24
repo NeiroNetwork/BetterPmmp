@@ -6,9 +6,8 @@ namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\Listener;
 
-class DisableComboGlitch implements Listener, Module{
+class DisableComboGlitch implements Module{
 
 	public function isLoadable() : bool{
 		return true;

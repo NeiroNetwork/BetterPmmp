@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace NeiroNetwork\BetterPmmp\modification;
 
-use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerEmoteEvent;
 use pocketmine\network\mcpe\protocol\EmotePacket;
@@ -12,7 +11,7 @@ use pocketmine\network\mcpe\protocol\TextPacket;
 use pocketmine\player\Player;
 use pocketmine\Server;
 
-class VanillaLikeChat implements Listener, Module{
+class VanillaLikeChat implements Module{
 
 	public function isLoadable() : bool{
 		return Server::getInstance()->getConfigGroup()->getPropertyBool("player.verify-xuid", true);

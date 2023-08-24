@@ -6,12 +6,11 @@ namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\entity\projectile\EnderPearl;
 use pocketmine\event\entity\EntityTeleportEvent;
-use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class LimitedEnderPearl implements Listener, Module{
+class LimitedEnderPearl implements Module{
 
 	public function isLoadable() : bool{
 		return true;

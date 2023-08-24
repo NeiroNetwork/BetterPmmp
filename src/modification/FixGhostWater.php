@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\block\VanillaBlocks;
-use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\math\Vector3;
 use pocketmine\network\mcpe\convert\TypeConverter;
@@ -14,7 +13,7 @@ use pocketmine\network\mcpe\protocol\UpdateBlockPacket;
 use pocketmine\player\Player;
 use pocketmine\Server;
 
-class FixGhostWater implements Listener, Module{
+class FixGhostWater implements Module{
 
 	public function isLoadable() : bool{
 		return is_null(Server::getInstance()->getPluginManager()->getPlugin("WaterLogging"));

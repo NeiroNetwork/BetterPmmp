@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace NeiroNetwork\BetterPmmp\modification;
 
-use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\types\AbilitiesLayer;
 use pocketmine\network\mcpe\protocol\UpdateAbilitiesPacket;
@@ -13,7 +12,7 @@ use ReflectionClass;
 /**
  * @see https://github.com/pmmp/PocketMine-MP/pull/5313
  */
-class DisableBreakingBySpectator implements Listener, Module{
+class DisableBreakingBySpectator implements Module{
 
 	public function isLoadable() : bool{
 		return true;

@@ -6,11 +6,10 @@ namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\entity\projectile\Arrow;
 use pocketmine\event\entity\EntityDamageByChildEntityEvent;
-use pocketmine\event\Listener;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 use pocketmine\player\Player;
 
-class ArrowHitSound implements Listener, Module{
+class ArrowHitSound implements Module{
 
 	public function isLoadable() : bool{
 		return true;

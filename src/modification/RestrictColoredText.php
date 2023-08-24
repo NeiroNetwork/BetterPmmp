@@ -6,12 +6,11 @@ namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\block\utils\SignText;
 use pocketmine\event\block\SignChangeEvent;
-use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\permission\DefaultPermissions;
 use pocketmine\utils\TextFormat;
 
-class RestrictColoredText implements Listener, Module{
+class RestrictColoredText implements Module{
 
 	public function isLoadable() : bool{
 		return true;

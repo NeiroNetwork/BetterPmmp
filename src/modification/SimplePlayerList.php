@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace NeiroNetwork\BetterPmmp\modification;
 
-use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\PlayerListPacket;
 use pocketmine\Server;
 
-class SimplePlayerList implements Listener, Module{
+class SimplePlayerList implements Module{
 
 	public function isLoadable() : bool{
 		return true;
