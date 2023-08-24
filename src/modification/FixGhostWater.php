@@ -15,7 +15,7 @@ use pocketmine\Server;
 
 class FixGhostWater implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return is_null(Server::getInstance()->getPluginManager()->getPlugin("WaterLogging"));
 	}
 

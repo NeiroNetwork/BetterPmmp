@@ -12,7 +12,7 @@ use pocketmine\utils\TextFormat;
 
 class RestrictColoredText implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return true;
 	}
 

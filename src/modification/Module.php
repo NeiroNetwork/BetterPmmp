@@ -8,5 +8,5 @@ use pocketmine\event\Listener;
 
 interface Module extends Listener{
 
-	public function isLoadable() : bool;
+	public function canEnable() : bool;
 }

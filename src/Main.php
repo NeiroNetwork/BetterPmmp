@@ -30,7 +30,7 @@ class Main extends PluginBase{
 			$class = "NeiroNetwork\\BetterPmmp\\modification\\$module";
 			if(class_exists($class) && is_subclass_of($class, Module::class)){
 				$instance = new $class();
-				if($instance->isLoadable()){
+				if($instance->canEnable()){
 					$this->getServer()->getPluginManager()->registerEvents($instance, $this);
 				}
 			}else{

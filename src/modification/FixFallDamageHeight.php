@@ -8,7 +8,7 @@ use pocketmine\event\entity\EntityDamageEvent;
 
 class FixFallDamageHeight implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return true;
 	}
 

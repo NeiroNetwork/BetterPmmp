@@ -9,7 +9,7 @@ use pocketmine\event\entity\EntityDamageEvent;
 
 class DisableComboGlitch implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return true;
 	}
 

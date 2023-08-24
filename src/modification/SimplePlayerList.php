@@ -10,7 +10,7 @@ use pocketmine\Server;
 
 class SimplePlayerList implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return true;
 	}
 

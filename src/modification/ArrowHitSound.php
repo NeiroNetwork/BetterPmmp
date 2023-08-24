@@ -11,7 +11,7 @@ use pocketmine\player\Player;
 
 class ArrowHitSound implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return true;
 	}
 

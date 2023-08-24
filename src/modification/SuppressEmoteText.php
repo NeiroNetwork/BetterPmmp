@@ -10,7 +10,7 @@ use pocketmine\network\mcpe\protocol\StartGamePacket;
 
 class SuppressEmoteText implements Module{
 
-	public function isLoadable() : bool{
+	public function canEnable() : bool{
 		return true;
 	}
 
