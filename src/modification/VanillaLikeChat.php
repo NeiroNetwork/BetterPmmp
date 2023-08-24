@@ -17,9 +17,7 @@ class VanillaLikeChat implements Listener, Module{
 	}
 
 	/**
-	 * FIXME?: 優先度MONITORでイベントを変更してはいけないという原則を破ってる
-	 *
-	 * @priority MONITOR
+	 * @priority HIGHEST
 	 */
 	public function onPlayerChat(PlayerChatEvent $event) : void{
 		$sender = $event->getPlayer();
