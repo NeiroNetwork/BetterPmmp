@@ -10,11 +10,7 @@ use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\player\Player;
 use pocketmine\world\World;
 
-class LimitedEnderPearl implements Module{
-
-	public function canEnable() : bool{
-		return true;
-	}
+class LimitedEnderPearl extends ModuleBase{
 
 	/**
 	 * @priority MONITOR

@@ -9,11 +9,7 @@ use pocketmine\event\entity\EntityDamageByChildEntityEvent;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 use pocketmine\player\Player;
 
-class ArrowHitSound implements Module{
-
-	public function canEnable() : bool{
-		return true;
-	}
+class ArrowHitSound extends ModuleBase{
 
 	/**
 	 * @priority MONITOR

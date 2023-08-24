@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace NeiroNetwork\BetterPmmp;
 
-use NeiroNetwork\BetterPmmp\modification\Module;
+use NeiroNetwork\BetterPmmp\modification\ModuleBase;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use Symfony\Component\Filesystem\Path;
@@ -28,10 +28,11 @@ class Main extends PluginBase{
 			if(!$enable) continue;
 
 			$class = "NeiroNetwork\\BetterPmmp\\modification\\$module";
-			if(class_exists($class) && is_subclass_of($class, Module::class)){
+			if(class_exists($class) && is_subclass_of($class, ModuleBase::class)){
 				$instance = new $class();
 				if($instance->canEnable()){
 					$this->getServer()->getPluginManager()->registerEvents($instance, $this);
+					$instance->onEnabled();
 				}
 			}else{
 				$this->getLogger()->error("Module \"$module\" not found");

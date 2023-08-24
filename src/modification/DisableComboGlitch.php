@@ -7,11 +7,7 @@ namespace NeiroNetwork\BetterPmmp\modification;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 
-class DisableComboGlitch implements Module{
-
-	public function canEnable() : bool{
-		return true;
-	}
+class DisableComboGlitch extends ModuleBase{
 
 	/**
 	 * @priority LOWEST

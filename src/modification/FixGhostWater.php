@@ -13,7 +13,7 @@ use pocketmine\network\mcpe\protocol\UpdateBlockPacket;
 use pocketmine\player\Player;
 use pocketmine\Server;
 
-class FixGhostWater implements Module{
+class FixGhostWater extends ModuleBase{
 
 	public function canEnable() : bool{
 		return is_null(Server::getInstance()->getPluginManager()->getPlugin("WaterLogging"));

@@ -10,11 +10,7 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\permission\DefaultPermissions;
 use pocketmine\utils\TextFormat;
 
-class RestrictColoredText implements Module{
-
-	public function canEnable() : bool{
-		return true;
-	}
+class RestrictColoredText extends ModuleBase{
 
 	/**
 	 * @priority LOWEST

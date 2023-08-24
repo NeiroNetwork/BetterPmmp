@@ -8,11 +8,7 @@ use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\PlayerListPacket;
 use pocketmine\Server;
 
-class SimplePlayerList implements Module{
-
-	public function canEnable() : bool{
-		return true;
-	}
+class SimplePlayerList extends ModuleBase{
 
 	public function onDataPacketSend(DataPacketSendEvent $event) : void{
 		foreach($event->getPackets() as $packet){

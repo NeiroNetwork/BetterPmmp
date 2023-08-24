@@ -6,11 +6,7 @@ namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\event\entity\EntityDamageEvent;
 
-class FixFallDamageHeight implements Module{
-
-	public function canEnable() : bool{
-		return true;
-	}
+class FixFallDamageHeight extends ModuleBase{
 
 	/**
 	 * @priority LOWEST
