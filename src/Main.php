@@ -21,6 +21,7 @@ class Main extends PluginBase{
 			"DisableBreakingBySpectator" => true,
 			"ArrowHitSound" => true,
 			"FixGhostWater" => true,
+			"SuppressEmoteText" => true,
 		]);
 
 		foreach($config->getAll() as $module => $enable){
