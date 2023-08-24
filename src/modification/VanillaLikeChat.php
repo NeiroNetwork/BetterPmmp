@@ -8,11 +8,12 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\network\mcpe\protocol\TextPacket;
 use pocketmine\player\Player;
+use pocketmine\Server;
 
 class VanillaLikeChat implements Listener, Module{
 
 	public function isLoadable() : bool{
-		return true;
+		return Server::getInstance()->getConfigGroup()->getPropertyBool("player.verify-xuid", true);
 	}
 
 	/**
