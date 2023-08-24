@@ -6,6 +6,8 @@ namespace NeiroNetwork\BetterPmmp\modification;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\event\player\PlayerEmoteEvent;
+use pocketmine\network\mcpe\protocol\EmotePacket;
 use pocketmine\network\mcpe\protocol\TextPacket;
 use pocketmine\player\Player;
 use pocketmine\Server;
@@ -42,4 +44,17 @@ class VanillaLikeChat implements Listener, Module{
 	}
 
 	// TODO: /tell なども TextPacket::TYPE_WHISPER を使って送信する
+
+
+	/**
+	 * @priority HIGHEST
+	 */
+	public function onPlayerEmote(PlayerEmoteEvent $event) : void{
+		$event->cancel();
+
+		$player = $event->getPlayer();
+		$packet = EmotePacket::create($player->getId(), $event->getEmoteId(), $player->getXuid(), "", EmotePacket::FLAG_SERVER | EmotePacket::FLAG_MUTE_ANNOUNCEMENT);
+		$recipients = array_map(fn(Player $player) => $player->getNetworkSession(), $player->getViewers());
+		$player->getNetworkSession()->getBroadcaster()->broadcastPackets($recipients, [$packet]);
+	}
 }
