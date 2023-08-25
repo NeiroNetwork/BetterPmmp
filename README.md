@@ -16,7 +16,7 @@
 
 ### DisableBreakingBySpectator
 
-ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。  
+OP権限を持っているプレイヤーがスペクテイターでブロックを破壊できてしまう問題を修正します。  
 参照: <https://github.com/pmmp/PocketMine-MP/pull/5313>
 
 ### DisableComboGlitch
