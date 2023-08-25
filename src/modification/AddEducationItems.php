@@ -29,6 +29,9 @@ class AddEducationItems extends ModuleBase{
 		$coloredTorches = [VanillaBlocks::RED_TORCH(), VanillaBlocks::GREEN_TORCH(), VanillaBlocks::BLUE_TORCH(), VanillaBlocks::PURPLE_TORCH(), VanillaBlocks::UNDERWATER_TORCH()];
 		$coloredTorches = array_map(fn(Block $block) => $block->asItem(), $coloredTorches);
 
+		$underwaterTntKey = VanillaBlocks::TNT()->asItem();
+		$underwaterTnt = [VanillaBlocks::TNT()->setWorksUnderwater(true)];
+
 		$elementZeroItem = VanillaBlocks::ELEMENT_ZERO()->asItem();
 		$remainingElementsCount = 0;
 		$elementsKey = VanillaItems::SUSPICIOUS_STEW();
@@ -54,6 +57,7 @@ class AddEducationItems extends ModuleBase{
 				$hardenedGlassesKey->equals($item) => $hardenedGlasses,
 				$hardenedGlassPanesKey->equals($item) => $hardenedGlassPanes,
 				$coloredTorchesKey->equals($item) => $coloredTorches,
+				$underwaterTntKey->equals($item) => $underwaterTnt,
 				$elementsKey->equals($item) => $elements,
 				default => [],
 			});
