@@ -17,6 +17,7 @@ class Main extends PluginBase{
 			"ArrowHitSound" => true,
 			"DisableBreakingBySpectator" => true,
 			"DisableComboGlitch" => true,
+			"FixFallDamageCalculation" => false,
 			"FixFallDamageHeight" => true,
 			"FixGhostWater" => true,
 			"LimitedEnderPearl" => true,

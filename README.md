@@ -24,6 +24,11 @@ OP権限を持っているプレイヤーがスペクテイターでブロック
 俗に言う切り替え攻撃を無効化します。  
 参考: <https://github.com/NeiroNetwork/AttackDelayController>
 
+### FixFallDamageCalculation
+
+[FixFallDamageHeight](#fixfalldamageheight) とは違い、プレイヤークラスの落下ダメージの計算を上書きして修正します。  
+プレイヤークラスの上書きは非協力的であったり、見た目をよくするためのひどいハックが用いられているため、デフォルトでは無効になっています。
+
 ### FixFallDamageHeight
 
 2ブロックの高さからジャンプするとダメージが受ける問題を一時的に修正します。  
