@@ -42,7 +42,7 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 ### FixGhostWater
 
 はしごなどの水没するブロックに水を設置しようとすると、クライアント側に水が残ってしまうバグを修正します。
-参照: <https://github.com/NeiroNetwork/ExperimentalFeatures> [WaterBucketFixer.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/override/expert/item/WaterBucketFixer.php)
+参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [WaterBucketFixer.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/override/expert/item/WaterBucketFixer.php)
 
 ### SuppressEmoteText
 
