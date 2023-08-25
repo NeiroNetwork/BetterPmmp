@@ -13,16 +13,16 @@ class Main extends PluginBase{
 
 	protected function onEnable() : void{
 		$config = new Config(Path::join($this->getDataFolder(), "config.yml"), default: [
-			"RestrictColoredText" => true,
-			"DisableComboGlitch" => true,
-			"SimplePlayerList" => true,
-			"LimitedEnderPearl" => true,
-			"FixFallDamageHeight" => true,
-			"DisableBreakingBySpectator" => true,
-			"ArrowHitSound" => true,
-			"FixGhostWater" => true,
-			"SuppressSelfEmoteText" => true,
 			"AddEducationItems" => true,
+			"ArrowHitSound" => true,
+			"DisableBreakingBySpectator" => true,
+			"DisableComboGlitch" => true,
+			"FixFallDamageHeight" => true,
+			"FixGhostWater" => true,
+			"LimitedEnderPearl" => true,
+			"RestrictColoredText" => true,
+			"SimplePlayerList" => true,
+			"SuppressSelfEmoteText" => true,
 		]);
 
 		foreach($config->getAll() as $module => $enable){

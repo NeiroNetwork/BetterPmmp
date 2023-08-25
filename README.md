@@ -4,24 +4,25 @@
 
 これらの変更は設定ファイルから有効/無効化できます。
 
-### RestrictColoredText
+### AddEducationItems
 
-OP権限を持っていないプレイヤーによる文字の装飾を禁止します。  
-参考: <https://github.com/NeiroNetwork/RestrictColoredText>
+クリエイティブインベントリに Education Edition のアイテムをいくつか追加し、要素ブロックを最後に移動させます。
+参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [CreativeContentsRegister.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/register/CreativeContentsRegister.php)
+
+### ArrowHitSound
+
+プレイヤーがエンティティに弓矢を当てた際に、攻撃者に効果音を再生します。  
+本来はプレイヤーに当てた場合のみに再生されるのが正しいバニラの挙動です: <https://minecraft.fandom.com/wiki/Bow#Sounds>
+
+### DisableBreakSpectator
+
+ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。  
+参照: <https://github.com/pmmp/PocketMine-MP/pull/5313>
 
 ### DisableComboGlitch
 
 俗に言う切り替え攻撃を無効化します。  
 参考: <https://github.com/NeiroNetwork/AttackDelayController>
-
-### SimplePlayerList
-
-メニューに表示されるプレイヤーリストをバニラのよう(プレイヤーの名前のみ)にします。  
-チャットでプレイヤーをメンションするときに、余計な文字を含まなくなります。
-
-### LimitedEnderPearl
-
-プレイヤーが死亡した時・他のワールドへテレポートした時に、そのプレイヤーが投げたエンダーパールを無効化します。
 
 ### FixFallDamageHeight
 
@@ -29,26 +30,25 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 (イベントをキャンセルするだけなので、落下ダメージの音などは消えません)  
 参照: <https://github.com/pmmp/PocketMine-MP/issues/4686>
 
-### DisableBreakSpectator
-
-ゲームモードをスペクテイターに変更した際に、ブロックを破壊できないようにします。  
-参照: <https://github.com/pmmp/PocketMine-MP/pull/5313>
-
-### ArrowHitSound
-
-プレイヤーがエンティティに弓矢を当てた際に、攻撃者に効果音を再生します。  
-本来はプレイヤーに当てた場合のみに再生されるのが正しいバニラの挙動です: <https://minecraft.fandom.com/wiki/Bow#Sounds>
-
 ### FixGhostWater
 
 はしごなどの水没するブロックに水を設置しようとすると、クライアント側に水が残ってしまうバグを修正します。
 参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [WaterBucketFixer.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/override/expert/item/WaterBucketFixer.php)
 
+### LimitedEnderPearl
+
+プレイヤーが死亡した時・他のワールドへテレポートした時に、そのプレイヤーが投げたエンダーパールを無効化します。
+
+### RestrictColoredText
+
+OP権限を持っていないプレイヤーによる文字の装飾を禁止します。  
+参考: <https://github.com/NeiroNetwork/RestrictColoredText>
+
+### SimplePlayerList
+
+メニューに表示されるプレイヤーリストをバニラのよう(プレイヤーの名前のみ)にします。  
+チャットでプレイヤーをメンションするときに、余計な文字を含まなくなります。
+
 ### SuppressSelfEmoteText
 
 エモートした際のメッセージがプレイヤー自身に表示されないようにします。
-
-### AddEducationItems
-
-クリエイティブインベントリに Education Edition のアイテムをいくつか追加し、要素ブロックを最後に移動させます。
-参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [CreativeContentsRegister.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/register/CreativeContentsRegister.php)
