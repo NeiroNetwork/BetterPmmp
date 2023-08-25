@@ -12,7 +12,7 @@ use pocketmine\item\Item;
 use pocketmine\item\StringToItemParser;
 use pocketmine\item\VanillaItems;
 
-class AddEduItemsToCreativeInventory extends ModuleBase{
+class AddEducationItems extends ModuleBase{
 
 	public function onEnabled() : void{
 		$colors = [DyeColor::WHITE(), DyeColor::LIGHT_GRAY(), DyeColor::GRAY(), DyeColor::BLACK(), DyeColor::BROWN(), DyeColor::RED(), DyeColor::ORANGE(), DyeColor::YELLOW(), DyeColor::LIME(), DyeColor::GREEN(), DyeColor::CYAN(), DyeColor::LIGHT_BLUE(), DyeColor::BLUE(), DyeColor::PURPLE(), DyeColor::MAGENTA(), DyeColor::PINK()];

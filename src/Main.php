@@ -22,7 +22,7 @@ class Main extends PluginBase{
 			"ArrowHitSound" => true,
 			"FixGhostWater" => true,
 			"SuppressEmoteText" => true,
-			"AddEduItemsToCreativeInventory" => true,
+			"AddEducationItems" => true,
 		]);
 
 		foreach($config->getAll() as $module => $enable){

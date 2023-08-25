@@ -48,7 +48,7 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 
 エモートした際のメッセージがプレイヤー自身に表示されないようにします。
 
-### AddEduItemsToCreativeInventory
+### AddEducationItems
 
 クリエイティブインベントリに Education Edition のアイテムをいくつか追加し、要素ブロックを最後に移動させます。
 参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [CreativeContentsRegister.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/register/CreativeContentsRegister.php)
