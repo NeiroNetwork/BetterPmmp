@@ -8,7 +8,7 @@ use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\ProtocolInfo;
 use pocketmine\network\mcpe\protocol\StartGamePacket;
 
-class SuppressEmoteText extends ModuleBase{
+class SuppressSelfEmoteText extends ModuleBase{
 
 	public function onDataPacketSend(DataPacketSendEvent $event) : void{
 		$packet = $event->getPackets()[0];	// 大抵はパケット一つしかないからこれで大丈夫っしょ

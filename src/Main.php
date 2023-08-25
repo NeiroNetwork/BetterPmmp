@@ -21,7 +21,7 @@ class Main extends PluginBase{
 			"DisableBreakingBySpectator" => true,
 			"ArrowHitSound" => true,
 			"FixGhostWater" => true,
-			"SuppressEmoteText" => true,
+			"SuppressSelfEmoteText" => true,
 			"AddEducationItems" => true,
 		]);
 
