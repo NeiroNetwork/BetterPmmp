@@ -30,7 +30,7 @@ class AddEducationItems extends ModuleBase{
 		$coloredTorches = array_map(fn(Block $block) => $block->asItem(), $coloredTorches);
 
 		$underwaterTntKey = VanillaBlocks::TNT()->asItem();
-		$underwaterTnt = [VanillaBlocks::TNT()->setWorksUnderwater(true)];
+		$underwaterTnt = [VanillaBlocks::TNT()->setWorksUnderwater(true)->asItem()];
 
 		$elementZeroItem = VanillaBlocks::ELEMENT_ZERO()->asItem();
 		$remainingElementsCount = 0;
