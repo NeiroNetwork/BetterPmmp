@@ -6,7 +6,7 @@
 
 ### AddEducationItems
 
-クリエイティブインベントリに Education Edition のアイテムをいくつか追加し、要素ブロックを最後に移動させます。
+クリエイティブインベントリに Education Edition のアイテムをいくつか追加し、要素ブロックを最後に移動させます。  
 参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [CreativeContentsRegister.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/register/CreativeContentsRegister.php)
 
 ### ArrowHitSound
@@ -32,7 +32,7 @@
 
 ### FixGhostWater
 
-はしごなどの水没するブロックに水を設置しようとすると、クライアント側に水が残ってしまうバグを修正します。
+はしごなどの水没するブロックに水を設置しようとすると、クライアント側に水が残ってしまうバグを修正します。  
 参考: <https://github.com/NeiroNetwork/ExperimentalFeatures> [WaterBucketFixer.php](https://github.com/NeiroNetwork/ExperimentalFeatures/blob/686c3973cdcfc221c75b9bf1eea657d846779302/src/override/expert/item/WaterBucketFixer.php)
 
 ### LimitedEnderPearl
