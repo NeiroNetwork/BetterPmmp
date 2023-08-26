@@ -23,7 +23,7 @@ jobs:
           $path = str_replace("\\", "/", $description["src-namespace-prefix"] ?? exit);
           system("mkdir -p _/$path; mv src/* _/$path; rmdir src; mv _ src");
           unset($description["src-namespace-prefix"]);
-          yaml_emit_file($description, "plugin.yml");
+          yaml_emit_file("plugin.yml", $description);
 
       - name: Build plugin
         run: curl -sL https://raw.githubusercontent.com/pmmp/DevTools/1.17.1/src/ConsoleScript.php | php -dphar.readonly=0 -- --make ./ --out $OUTPUT_FILE
