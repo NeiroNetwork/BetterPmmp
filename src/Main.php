@@ -27,18 +27,19 @@ class Main extends PluginBase{
 		]);
 
 		foreach($config->getAll() as $module => $enable){
-			if(!$enable) continue;
-
 			$class = "NeiroNetwork\\BetterPmmp\\modification\\$module";
-			if(class_exists($class) && is_subclass_of($class, ModuleBase::class)){
+			if(!class_exists($class) || is_subclass_of($class, ModuleBase::class)){
+				$this->getLogger()->error("Module \"$module\" not found");
+				$config->remove($module);
+				continue;
+			}
+
+			if($enable){
 				$instance = new $class();
 				if($instance->canEnable()){
 					$this->getServer()->getPluginManager()->registerEvents($instance, $this);
 					$instance->onEnabled();
 				}
-			}else{
-				$this->getLogger()->error("Module \"$module\" not found");
-				$config->remove($module);
 			}
 		}
 
