@@ -57,3 +57,4 @@ OP権限を持っていないプレイヤーによる文字の装飾を禁止し
 ### SuppressSelfEmoteText
 
 エモートした際のメッセージがプレイヤー自身に表示されないようにします。
+似たプラグイン: <https://github.com/nhanaz-pm-pl/NoEmoteMessage>
