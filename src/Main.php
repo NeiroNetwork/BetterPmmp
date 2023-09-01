@@ -28,7 +28,7 @@ class Main extends PluginBase{
 
 		foreach($config->getAll() as $module => $enable){
 			$class = "NeiroNetwork\\BetterPmmp\\modification\\$module";
-			if(!class_exists($class) || is_subclass_of($class, ModuleBase::class)){
+			if(!class_exists($class) || !is_subclass_of($class, ModuleBase::class)){
 				$this->getLogger()->error("Module \"$module\" not found");
 				$config->remove($module);
 				continue;
