@@ -9,12 +9,16 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use Symfony\Component\Filesystem\Path;
 
-class Main extends PluginBase{
+final class Main extends PluginBase{
 
-	protected function onEnable() : void{
+	/** @var ModuleBase[] */
+	private array $modules = [];
+
+	protected function onLoad() : void{
 		$config = new Config(Path::join($this->getDataFolder(), "config.yml"), default: [
 			"AddEducationItems" => true,
 			"ArrowHitSound" => true,
+			"BetterFlat" => true,
 			"DisableBreakingBySpectator" => true,
 			"DisableComboGlitch" => true,
 			"FixFallDamageCalculation" => false,
@@ -26,25 +30,33 @@ class Main extends PluginBase{
 			"SuppressSelfEmoteText" => true,
 		]);
 
-		foreach($config->getAll() as $module => $enable){
-			$class = "NeiroNetwork\\BetterPmmp\\modification\\$module";
+		foreach($config->getAll() as $moduleName => $enable){
+			$class = "NeiroNetwork\\BetterPmmp\\modification\\$moduleName";
 			if(!class_exists($class) || !is_subclass_of($class, ModuleBase::class)){
-				$this->getLogger()->error("Module \"$module\" not found");
-				$config->remove($module);
+				$this->getLogger()->error("Module \"$moduleName\" not found");
+				$config->remove($moduleName);
 				continue;
 			}
 
 			if($enable){
-				$instance = new $class();
-				if($instance->canEnable()){
-					$this->getServer()->getPluginManager()->registerEvents($instance, $this);
-					$instance->onEnabled();
-				}
+				$this->modules[] = $module = new $class();
+				$module->onLoad();
 			}
 		}
 
 		if($config->hasChanged()){
 			$config->save();
+		}
+	}
+
+	protected function onEnable() : void{
+		foreach($this->modules as $key => $module){
+			if($module->canEnable()){
+				$this->getServer()->getPluginManager()->registerEvents($module, $this);
+				$module->onEnabled();
+			}else{
+				unset($this->modules[$key]);
+			}
 		}
 	}
 }

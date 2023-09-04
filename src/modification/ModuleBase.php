@@ -12,10 +12,16 @@ abstract class ModuleBase implements Listener{
 		// Do not use and override the constructor
 	}
 
+	public function onLoad() : void{
+	}
+
 	public function canEnable() : bool{
 		return true;
 	}
 
+	/**
+	 * ワールドが読み込まれ、このクラスをイベントリスナーとして登録した後に呼び出されます。
+	 */
 	public function onEnabled() : void{
 	}
 }
